@@ -1,0 +1,43 @@
+<style>
+/* Pagination links */
+.pagination div {
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+</style>
+
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<div class="pagination">
+    {{ if $pag.HasPrev }}
+    <a href="{{ $pag.Prev.URL }}" rel="prev" class="page-link">&laquo; Prev</a>
+    {{ end }}
+    {{ range $pag.Pagers }}
+    {{ if eq . $pag }}
+    <a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a>
+    {{ else }}
+    <a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a>
+    {{ end }}
+    {{ end }}
+    {{ if $pag.HasNext }}
+    <a href="{{ $pag.Next.URL }}" rel="next" class="page-link">Next &raquo;</a>
+    {{ end }}
+</div>
+{{ end }}

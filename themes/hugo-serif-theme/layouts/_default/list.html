@@ -1,0 +1,36 @@
+{{ define "body_classes" }}page-default-list{{ end }}
+
+{{ define "main" }}
+
+<style>
+td {
+  padding-bottom:20px;
+}
+</style>
+
+<div class="container pt-6 pb-md-12">
+  <h1 class="title">{{.Title}}</h1>
+  <br>
+  <table>
+    <!-- Ranges through content/posts/*.md -->
+    {{ range (.Paginator 10).Pages }}
+        <tr style="font-size:large;">
+          <td style="width:120px;">{{.Date.Format "Jan 2006"}}</td>
+          <td><a href="{{.Permalink}}">{{.Title}}</a></td>
+        </tr>
+    {{ end }}
+  </table>
+  <br>
+  <h3>
+    {{ if .Paginator.HasPrev }}
+      <a href="{{ .Paginator.Prev.URL }}">  Prev </a>
+    {{ end }}
+    {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}">  Next </a>
+    {{ end }}
+  </h3>
+  <br>
+  <br>
+  <br>
+</div>
+{{ end }}

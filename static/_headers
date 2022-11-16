@@ -1,0 +1,8 @@
+/*  
+  # Prevent browsers from incorrectly detecting non-scripts as scripts
+  X-Content-Type-Options: nosniff
+
+  # X-XSS-Protection sets the configuration for the cross-site scripting filter built into most browsers.
+  X-XSS-Protection: 1; mode=block
+    cache-control: public
+    cache-control: max-age=86400

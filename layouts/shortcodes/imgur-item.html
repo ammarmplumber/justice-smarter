@@ -1,0 +1,54 @@
+<!--layouts/shortcodes/imgur-item.html-->
+{{- $src := .Get "src" -}}
+{{- $city := .Get "city" -}}
+{{- $type := .Get "type" -}}
+{{- $imgid := .Get "imgid" -}}
+{{ with $imgid }}
+
+<style>
+    .flex-item {
+        /*width: 350px;
+        height: null;*/
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 100px;
+        justify-content: flex-start;
+        display: flex;
+        padding-left: 20px;
+    }
+
+    .flex-item img {
+        cursor: pointer;
+        max-width: 400px;
+        object-fit: cover;
+        width: 300px;
+        height: 300px;
+    }
+
+    figcaption {
+        color: black;
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+</style>
+
+
+<div class="flex-item">
+    <a href="/images/kioskgallery/{{$imgid}}.webp">
+        <figure>
+            {{ with $city }}
+            <img src="/images/kioskgallery/{{$imgid}}.webp" loading="lazy" alt="{{$city}} bill payment kiosk"/>
+            {{ end }}
+            <!--<div style="clear: both;"></div>-->
+            <figcaption>{{$city}}</figcaption>
+            {{ end }}
+            {{ with $type }}
+            <figcaption>{{$type}}</figcaption>
+            {{ end }}
+        </figure>
+    </a>
+  </div>
+
+

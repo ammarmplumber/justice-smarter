@@ -1,0 +1,244 @@
+{{ define "body_classes" }}page-home{{ end }}
+
+
+{{ define "main" }}
+<div class="intro">
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
+        {{ .Content }}
+        <a href="/utilities/" class="button">Utilities</a>
+        <a href="/courts/" class="button">Courts</a>
+        <a href="/taxes/" class="button">Taxes</a>
+        <a href="/transportation/" class="button">Transportation</a>
+        <a href="/parking/" class="button">Parking</a>
+        <a href="/publicworks/" class="button">Public Works</a>
+        <a href="/finance/" class="button">Finance</a>
+        <a href="/contact/" class="button" style="background: white; color: black; border: 1px solid black;">Contact Us</a>
+        <!-- {{ if .Site.Params.homepage.show_contact_box }}
+          {{ partial "call.html" (dict "site" .Site "context" . "show_button" "true") }}
+        {{ end }} -->
+      </div>
+      {{ if .Params.intro_image }}
+      <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
+        <img alt={{ .Title }} class="intro-image{{ if .Params.intro_image_absolute }} intro-image-absolute{{ end }}{{ if .Params.intro_image_hide_on_mobile }} intro-image-hide-mobile{{ end }}" src="{{ .Params.intro_image | relURL }}" width="500px" height="529px" style="padding-top: 40px;" />
+      </div>
+      {{ end }}
+    </div>
+    <br><br>
+  </div>
+</div>
+
+<style>
+  td {
+    padding: 15px;
+  }
+
+  .blockquote {
+    padding: 10px 80px 40px;
+    position: relative;
+  }
+  .blockquote p {
+      font-size: 35px;
+      font-weight: 700px;
+      text-align: center;
+  }
+
+  .blockquote:before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    top: 0;
+    
+    content:"\f10d";
+    font-size: 200px;
+    color: rgba(0,0,0,0.1);
+    
+  }
+
+  .blockquote::after {
+      content: "";
+      top: 20px;
+      left: 50%;
+      margin-left: -100px;
+      position: absolute;
+      border-bottom: 3px solid #E42217;
+      height: 3px;
+      width: 200px;
+  }
+
+  .otro-blockquote{
+    font-size: 1.2em;
+    width:80%;
+    font-style:italic;
+    color: #555555;
+    padding:1.2em 30px 1.2em 75px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left:8px solid #E42217 ;
+    line-height:1.6;
+    position: relative;
+    background:#ffffff;
+  }
+
+  .otro-blockquote::before{
+    content: "\201C";
+    color:#E42217;
+    font-size:6em;
+    font-style: normal;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: -20px;
+  }
+
+  .otro-blockquote::after{
+    content: '';
+  }
+
+  .otro-blockquote span{
+    display:block;
+    color:#333333;
+    font-style: normal;
+    font-weight: bold;
+    margin-top:1em;
+  }
+  
+  hr.solid {
+    border-top: 3px solid #E42217;
+  }
+</style>
+
+<div style="background-color: #ffffff;">
+<br><br>
+<br>
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-7 col-lg-6 order-1" style="align-self: center; width: 100%; max-width: 400px;">
+      <h1 style="font-size: 40px;">Work With Us</h1>
+      <p>AdComp makes smart technology accessible for local governments. For over 30 years, we have developed customizable products that simplify the payment process and streamline governmental functions, helping municipalities boost productivity and better serve their communities.
+        <br><br>We have over <a href="/clientsmap">300 clients worldwide</a>. Hear about some of <a href="/ourclients">their experiences</a>.</p>
+      <br>
+    </div>
+    <br>
+    <div class="order-2 position-relative" style="width: 90%; max-width: 650px; padding-left: 20px;">
+      <table style="margin: auto;">
+        <tr>
+          <td><img src="/images/citylogos/sanantonio.webp" loading="lazy" height="250px" width="250px" style="width: 80%; height: auto;"/></td>
+          <td><img src="/images/citylogos/boston.webp" loading="lazy" height="250px" width="250px" style="width: 80%; height: auto;" /></td>
+          <td><img src="/images/citylogos/oakland.webp" loading="lazy" height="250px" width="250px" style="width: 80%; height: auto;" /></td>
+        </tr>
+        <tr>
+          <td><img src="/images/citylogos/sandiego.webp" loading="lazy" height="250px" width="250px" style="width: 80%; height: auto;" /></td>
+          <td><img src="/images/citylogos/louisville.webp" loading="lazy" height="250px" width="250px" style="width: 80%; height: auto;" /></td>
+          <td><img src="/images/citylogos/philadelphia.webp" loading="lazy" height="250px" width="250px" style="width: 80%; height: auto;" /></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+</div>
+
+
+<div class="container">
+  <br><br><br>
+  <div class="row justify-content-start">
+    <blockquote class="otro-blockquote">
+      Working customers appreciate the ability to pay after hours at any time they like. 
+      Having a kiosk also smoothes out lines in the front lobby. 
+      <br>
+      Credit card payment by phone (IVR) brings in more revenue and works after hours. Also we can text and remind citizens.
+      <br>
+      We are able to shut the front door and keep only the kiosk / drive thru open during the pandemic.
+      <span>Shirley Bertrand</span>
+      <i style="font-style: normal;">City of Abbeville, LA</i>
+      <br><br>
+      <hr class="solid">
+      <br>
+      With the kiosks, we can offer a 24 hour payment option... 
+      Convenient hours for payment and support. 
+      We are not seeing customers face-to-face for payment processing.
+      <span>Debbie Reaves</span>
+      <i style="font-style: normal;">City of Asheboro, NC</i>
+      <br><br>
+      <hr class="solid">
+      <br>
+      We just wrote citations to multiple violators on one scene. 
+      I broke out my phone and started cutting citations. 
+      Multiple ticket writers going on one printer with no issues at all. Fantastic.
+      <br>
+      Kudos to whoever added the printer list feature to the app. That is awesome. 
+      It was so easy to switch between vehicles like we had to do yesterday.
+      <span>Lt. Brian Furr</span>
+      <i style="font-style: normal;">City of Reno, TX - Parker County</i>
+      <br><br>
+      <hr class="solid">
+      <br>
+      During a hurricane or COVID-19 situation, we might be understaffed. 
+      The kiosk gives our customers another means to pay their bill.
+      Someone is always available for even those graveyard workers that are not able to pay their bill in the very AM hours.
+      No contact with the public, but, at the same time, we're providing a means to pay their bill.
+      <span>Rene Valdez</span>
+      <i style="font-style: normal;">City of Dayton, TX</i>
+      <br>
+      <br>
+    </blockquote>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+
+<!-- 
+{{ $posts := where (where .Site.RegularPages "Type" "posts") ".Params.featured" true }}
+{{if gt (len $posts) 0}}
+<div class="strip">
+  <div class="container pt-6 pb-6 pb-md-10">
+    <div class="row justify-content-start">
+      {{ $services := where (where .Site.RegularPages "Type" "posts") ".Params.featured" true }}
+      {{ range first 6 (sort $posts ".Params.weight") }}
+      <div class="col-12 col-md-4 mb-1">
+        {{ .Render "summary" }}
+      </div>
+      {{ end }}
+    </div>
+    {{ if not .Site.Params.homepage.show_services_button }}
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <a class="button button-primary" href="{{ "posts/" | relURL }}">View All Services</a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{end}}
+
+{{if .Site.Data.features}}
+<div class="strip strip-grey">
+  <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+    <div class="row justify-content-center">
+      {{ range .Site.Data.features }}
+      <div class="col-12 col-md-6 col-lg-4 mb-2">
+        <div class="feature">
+          {{ if .image }}
+          <div class="feature-image"><img width="100" height="100" alt="{{ .Title }} logo" src="{{ .image | relURL }}" /></div>
+          {{ end }}
+          <h2 class="feature-title">{{ .title }}</h2>
+          <div class="feature-content">
+            <p>{{ .description }}</p>
+          </div>
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</div>
+{{end}} -->
+
+{{ end }}
+
+{{ define "footer_js" }}
+{{ end }}

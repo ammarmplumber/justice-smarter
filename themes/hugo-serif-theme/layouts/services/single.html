@@ -1,0 +1,22 @@
+{{ define "body_classes" }}page-services-single{{ end }}
+
+{{ define "main" }}
+<div class="container pl-3 pb-6 pt-2 pb-md-10">
+  <div class="row justify-content-start">
+      <div class="service service-single" width="95%">
+        <h1 class="title">{{.Title}}</h1>
+        <div class="content">{{.Content}}</div>
+      </div>
+  </div>
+</div>
+{{ end }}
+
+{{ define "footer_js" }}
+{{ $library := resources.Get "js/libs/library.js" }}
+{{ $services := resources.Get "js/pages/services.js" }}
+{{ $servicesJS := slice $library $services | resources.Concat "js/services.js" }}
+{{ if hugo.IsProduction }}
+  {{ $servicesJS = $servicesJS | minify | fingerprint }}
+{{ end }}
+<script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
+{{ end }}

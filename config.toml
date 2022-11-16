@@ -1,0 +1,111 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "AdComp Systems Group"
+themesDir = "themes"
+theme = "hugo-serif-theme"
+
+[markup.goldmark.renderer]
+unsafe= true
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.80.0"
+    
+[params]
+  # In most cases you will only want to set the google_analytics_id OR the google_tag_manager_id. If you have Google Analytics included in your GTM tags don't put your GA ID here. Otherwise your data might be useless.
+  google_analytics_id = "UA-48076842-1"
+
+  [params.homepage]
+    show_contact_box = true # show / hide the contaxt box on the homepage
+    show_services_button = true  # show / hide the "view all services" button
+
+  [params.logo]
+    mobile = "images/logo/AdcompLogo.webp"
+    mobile_height = "100px"
+    mobile_width = "100px"
+    desktop = "images/logo/AdcompLogo.webp"
+    desktop_height = "150px"
+    desktop_width = "150px"
+    alt = "A payments-focused government tech company. We sell kiosks and software for courts and utilities."
+
+  [params.fonts]
+    # sets the google font link in layouts/partials/google-fonts.html
+    heading = "Helvetica"
+    base = "Helvetica"
+
+  [params.colors]
+    primary = "#E42217"
+    black = "#2f2f41"
+    white = "#ffffff"
+    white_offset = "#f6f7ff"
+    grey = "#5C5A5A"
+
+  [params.seo]
+    meta_twitter_site = "@zerostaticio"
+    meta_twitter_creator = "@zerostaticio"
+    meta_og_image = "images/screenshot.webp"
+
+  [params.team]
+    summary_large_truncate = 300  # How many characters to include in the summary of the team bios (large layout) before truncating
+
+  [params.footer]
+    copyright_text = 'Free Hugo theme by <a class="zerostatic" href="https://www.zerostatic.io">www.zerostatic.io</a>'
+
+[menu]
+  # Main Menu
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/team/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Solutions"
+    url = "/services/"
+      weight = 3
+
+  [[menu.main]]
+    name = "Our Clients"
+    url = "/ourclients/"
+    weight = 4
+
+  [[menu.main]]
+      name = "Hat Mania"
+      url = "/hatmania/"
+      weight = 6
+
+  [[menu.main]]
+      name = "Kiosk Gallery"
+      url = "/kioskgallery/"
+      weight = 7
+  
+  [[menu.main]]
+      name = "News"
+      url = "/posts/"
+      weight = 8
+
+  [[menu.main]]
+      name = "Contact"
+      url = "/contact/"
+      weight = 9
+
+  # Footer Menu
+  [[menu.footer]]
+    name = "Home"
+    url = "/"
+      weight = 1
+
+  [[menu.footer]]
+    name = "Contact"
+    url = "/contact/"
+      weight = 2
+
+  [[menu.footer]]
+    name = "Privacy"
+    url = "/privacypolicy/"
+      weight = 3
